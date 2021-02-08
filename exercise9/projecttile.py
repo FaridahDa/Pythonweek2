@@ -1,13 +1,15 @@
-from math import pi, tan, cos
-yo = 1
-x = 0.5
-o = 80 * (pi/180)
-v = 44
-g = 9.81
+from math import pi, cos, tan
 
-#
-y = yo + x tan 0 - (g * x2) / 2(v cos 0)2
+gravity = 9.81
+initial_velocity = 44
+elevation_angle = 80 * (pi/180)
+horizontal_distance = 0.5
+barrel_height = 1
 
+a = barrel_height
+c = gravity * (horizontal_distance ** 2)
+d = 2 * (initial_velocity*(cos(elevation_angle) ** 2))
+b = horizontal_distance * tan(elevation_angle)
 
-
-
+projectile_height = a + b - (c / d)
+print(projectile_height)
